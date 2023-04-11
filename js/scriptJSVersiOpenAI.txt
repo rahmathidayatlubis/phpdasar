@@ -1,0 +1,29 @@
+// gunakan "use strict"
+'use strict';
+
+// cache elemen yang dibutuhkan
+const keyword = document.getElementById('keyword');
+const tombolCari = document.getElementById('tombol-cari');
+const tabelMhs = document.getElementById('tabel-mhs');
+
+// tambahkan event listener dengan debounce
+const debounce = (func, delay) => {
+    let timeoutId;
+    return (...args) => {
+        if (timeoutId) {
+            clearTimeout(timeoutId);
+        }
+        timeoutId = setTimeout(() => {
+            func.apply(null, args);
+        }, delay);
+    };
+};
+keyword.addEventListener('keyup', debounce(function () {
+    // gunakan metode fetch untuk mengambil data
+    fetch(`ajax/mahasiswa.php?keyword=${keyword.value}`)
+    .then(response => response.text())
+    .then(data => {
+        tabelMhs.innerHTML = data;
+    })
+    .catch(error => console.error(error));
+}, 0)); // gunakan debounce dengan delay 500ms. Sesuaikan dengan kebutuhan Anda.
