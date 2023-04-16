@@ -3,8 +3,9 @@ $(document).ready(function () {
   $('#tombol-cari').hide();
 
   // even ketika disearch
-  $('#keyword').on('keyup', function (params) {
-    $('.tabel-mhs').load('ajax/mahasiswa.php?keyword=' + $('#keyword').val());
+  $('#keyword').on('keyup', function () {   
+    console.log("hello");
+    $('#tabel-mhs').load('ajax/mahasiswa.php?keyword=' + $('#keyword').val());
   });
 
 });

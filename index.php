@@ -28,6 +28,9 @@ if (isset($_POST["cari"])) {
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="js/script.js"></script>
     <title>CRUD</title>
 </head>
 
@@ -124,10 +127,6 @@ if (isset($_POST["cari"])) {
 
     </div>
 
-
-
-    <script src="js/jquery-3.6.4.min.js"></script>
-    <script src="js/script.js"></script>
 </body>
 
 </html>
